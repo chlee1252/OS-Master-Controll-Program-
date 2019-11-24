@@ -1,0 +1,35 @@
+Marc Lee
+CIS 415 project1 report
+
+My code compiles with provided MakeFile and part1~4 are working 
+
+Part1-it compiles it and work correctly
+Part2-it compiles it and work correctly
+Part3-it compiles it and work correctly (Got idea of setitimer from stack overflow
+Source provided in part3.c comments) And also, got lots of information such as 
+Time Quantum and concepts of Round Robin from text book and lab)
+When I do GDB with Part3 or above version, if I incorrectly quit the GDB then
+in top, the process is still running.
+
+Part4-it compiles it and report proc (Got information of /proc/<pid>/stat,cmdline,io from
+      man proc(5))
+Part5 - I tried to implement dynamic scheduling, but I could not think any idea to change.
+
+What I did,
+Since IO bound has shorter time than CPU bound process, I just compare the usertime, and if one process have less time, then I swap it. But it doesn't seem to work.
+If you see that it is not working correctly, please ignore it.
+
+I tried to make my onalarm() function work as circular scheduler, but seems it runs 
+little slow. 
+
+Also, I checked with ./valtest 1, 2, 3, 4 and no memory leaks in child/parent processes
+I checked with ./badtest and my all my programs exit correctly with error message
+I checked iwth ./goodtest and it works correctly.
+
+Not sure what to do with cpubound.c and iobound.c
+
+I'm little concern that my onalarm() is working correctly. I wish I have a chance to see
+sample output of project1-part3 and part4.
+
+UPDATE> I'm not sure why sample output of part3 has proc information on Piazza post.
+        I could not see any instruction of it, so I did not added to part3. 
